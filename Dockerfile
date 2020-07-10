@@ -12,19 +12,14 @@ RUN gunzip elm.gz
 RUN chmod +x elm
 RUN mv elm /usr/local/bin/
 
-# nginx, https://www.linode.com/docs/websites/nodejs/how-to-install-nodejs-and-nginx-on-debian
-RUN apt-get install -y nginx
-
 # make elm reactor and nginx accessible
-EXPOSE 8000 80
+EXPOSE 8000
 
+WORKDIR /usr/src/app
 
-# check installations with:
-#   node --version
-#   elm --version
-#   elm-test --version
-#   nginx -v
+COPY . .
+
+RUN elm make src/Main.elm
 
 # run web servers:
 CMD ["elm", "reactor"]
-# CMD ["service", "nginx", "start"]
