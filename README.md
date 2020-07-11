@@ -14,7 +14,7 @@ docker build --tag {name_of_build}:{sem.ver} .
 docker run --publish {port}:{port} --detach --name {abbreviation} {name_of_build}:{sem.ver}
 
 # stop
-docker rm -force {abbreviation}
+docker rm --force {abbreviation}
 
 # start kubernetes:
 minikube start --driver=hyperkit
@@ -24,3 +24,5 @@ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kube
 
 # run local registry server
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+FUUUUUUCK it's not working lol

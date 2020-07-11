@@ -1,4 +1,4 @@
-module Form exposing (..)
+module CreateUserForm exposing (..)
 
 import Browser
 import Html exposing (..)
@@ -60,10 +60,12 @@ update msg model =
 view : Model -> Html Msg
 view model =
   div []
-    [ viewInput "text" "Name" model.name Name
+    [ div [] [ text "Create User"]
+    , viewInput "text" "Name" model.name Name
     , viewInput "password" "Password" model.password Password
     , viewInput "password" "Re-enter Password" model.passwordAgain PasswordAgain
     , viewValidation model
+    , button [] [ text "Submit" ]
     ]
 
 

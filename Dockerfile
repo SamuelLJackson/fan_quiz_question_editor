@@ -13,7 +13,7 @@ RUN chmod +x elm
 RUN mv elm /usr/local/bin/
 
 # make elm reactor and nginx accessible
-EXPOSE 8000
+EXPOSE 80
 
 WORKDIR /usr/src/app
 
