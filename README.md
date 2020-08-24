@@ -25,4 +25,4 @@ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kube
 # run local registry server
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
-FUUUUUUCK it's 
+FUUUUUUCK it's  
